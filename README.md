@@ -5,8 +5,8 @@
    meteor create images
    cd images
 ```
-   Delete folder _client_ and _server_. Run _meteor_
+     Delete folder _client_ and _server_. Run _meteor_
 ```bash
    meteor
 ```
-   Open _http://localhost:3000_ on browser to make sure empty web application is running.
+     Open _http://localhost:3000_ on browser to make sure empty web application is running.
