@@ -2,6 +2,6 @@
 
 1. Create empty project
 
-'''bash
+```bash
 meteor create images
-'''
+```
