@@ -69,6 +69,7 @@ Change **main.html** by removing :
 ```html
   <div>React App #1</div>
 ```
+
 ### Create Image Detail and add to Components  
 Create **image_list.jsx** inside _components_ folder.
 
@@ -83,3 +84,30 @@ import ImageDetail from './image_detail';
         </ul>
     );
 ``` 
+
+### Create Dummy data
+Change **image_list.jsx** :
+```js
+import ImageDetail from './image_detail';
+
+const IMAGES = [
+    { tittle: 'Pen', link: 'http://dummyimage.com/600x400' },
+    { tittle: 'Pine Tree', link: 'http://dummyimage.com/600x400' },
+    { tittle: 'Mug', link: 'http://dummyimage.com/600x400' }
+];
+...
+...
+const ImageList = () => {
+    const RenderedImages = IMAGES.map(function() {
+        return (
+            <ImageDetail />
+        );
+    });
+
+    return (
+        <ul>
+            {RenderedImages}
+        </ul>
+    );
+};
+```
