@@ -4,16 +4,16 @@ import React from 'react';
 import ImageDetail from './image_detail';
 
 const IMAGES = [
-    { tittle: 'Pen', link: 'http://dummyimage.com/600x400' },
-    { tittle: 'Pine Tree', link: 'http://dummyimage.com/600x400' },
-    { tittle: 'Mug', link: 'http://dummyimage.com/600x400' }
+    { title: 'Pen', link: 'http://dummyimage.com/600x400' },
+    { title: 'Pine Tree', link: 'http://dummyimage.com/600x400' },
+    { title: 'Mug', link: 'http://dummyimage.com/600x400' }
 ];
 
 // Create component
 const ImageList = () => {
-    const RenderedImages = IMAGES.map(function() {
+    const RenderedImages = IMAGES.map(function(image) {
         return (
-            <ImageDetail />
+            <ImageDetail image={image} />
         );
     });
 
