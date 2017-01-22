@@ -83,3 +83,19 @@ import ReactDOM from 'react-dom';
 ```html
   <div>React App #1</div>
 ```
+
+4. Create Image Detail and add to Components  
+
+  Create image_list.jsx inside _components_ folder.  
+  Change **image_list.jsx** :
+
+  ```javascript
+    import ImageDetail from './image_detail';
+    ...
+    ...
+    return (
+        <ul>
+            <ImageDetail />
+        </ul>
+    );
+  ``` 
