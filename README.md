@@ -1,26 +1,27 @@
 ## Create Simple Application Using Meteor - React
 
-1. Create empty project  
+### Create empty project  
 ```bash
-   meteor create images
-   cd images
+meteor create images
+cd images
 ```  
-  Delete folder _client_ and _server_. Run _meteor_
+Delete folder _client_ and _server_. Run _meteor_
 ```bash
-   meteor
+meteor
 ```
-  Open _http://localhost:3000_ on browser to make sure empty web application is running.  
-2. Add simple React application  
-  Create folder _client_ and add main.html file:
-  ```html
-  <head>
-    <title>Images Bucket</title>
-  </head>
+Open _http://localhost:3000_ on browser to make sure empty web application is running.
 
-  <body>
-    <div>React App #1</div>
-  </body>
-  ```
+### Add simple React application  
+Create folder _client_ and add main.html file:
+```html
+<head>
+  <title>Images Bucket</title>
+</head>
+
+<body>
+  <div>React App #1</div>
+</body>
+```
  Open _http://localhost:3000_ on browser to view _React App #1_ displayed.  
  Add react and react-dom module.
  ```bash
