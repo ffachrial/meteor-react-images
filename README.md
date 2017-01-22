@@ -91,9 +91,9 @@ Change **image_list.jsx** :
 import ImageDetail from './image_detail';
 
 const IMAGES = [
-    { tittle: 'Pen', link: 'http://dummyimage.com/600x400' },
-    { tittle: 'Pine Tree', link: 'http://dummyimage.com/600x400' },
-    { tittle: 'Mug', link: 'http://dummyimage.com/600x400' }
+    { title: 'Pen', link: 'http://dummyimage.com/600x400' },
+    { title: 'Pine Tree', link: 'http://dummyimage.com/600x400' },
+    { title: 'Mug', link: 'http://dummyimage.com/600x400' }
 ];
 ...
 ...
@@ -110,4 +110,23 @@ const ImageList = () => {
         </ul>
     );
 };
+```
+
+### Communication with props
+Change **image_list.jsx** :
+```js
+    const RenderedImages = IMAGES.map(function(image) {
+        return (
+            <ImageDetail image={image} />
+        );
+    });
+```
+Change **image_detail.jsx** :
+```js
+    return (
+        <li>
+            <img src={props.image.link} />
+            {props.image.title}
+        </li>
+    );
 ```
