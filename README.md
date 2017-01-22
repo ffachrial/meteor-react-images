@@ -64,3 +64,22 @@ import ReactDOM from 'react-dom';
  ``` 
 
    Open _http://localhost:3000_ on browser to view _React App #2_ displayed.
+
+3. Export React Component  
+
+  Create _components_ folder inside _client_ folder and create image_list.jsx  
+  Change **main.jsx** :
+
+  ```javascript
+    return (
+        <div>
+            <ImageList />
+        </div>
+    );
+  ```
+
+  Change **main.html** by removing :
+
+```html
+  <div>React App #1</div>
+```
