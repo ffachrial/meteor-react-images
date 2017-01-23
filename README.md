@@ -237,3 +237,25 @@ const ImageList = (props) => {
         <ImageDetail key={image.title} image={image} />
     );
 ```
+
+### Filter data and score
+Create image_score.jsx under _components_ folder.
+
+Change image_detail.jsx :
+```js
+...
+import ImageScore from './image_score';
+...
+...
+                <p>{props.image.description}</p>
+                <ImageScore ups={props.image.ups} downs={props.image.downs} />
+...
+```
+Change image_list.jsx :
+```js
+    const validImages = props.images.filter(image => !image.is_album);
+
+    const RenderedImages = validImages.map(image => 
+        <ImageDetail key={image.title} image={image} />
+    );
+```
