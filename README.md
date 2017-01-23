@@ -163,3 +163,35 @@ img {
     width: 300px;
 }
 ```
+
+### AJAX with Axios
+Add axios and meteor-node-stubs module.
+```bash
+npm install --save axios
+meteor npm install --save meteor-node-stubs
+meteor
+```
+Change **main.jsx** :
+```js
+import React, { Component } from 'react';
+...
+import axios from 'axios';
+...
+// Create a component
+class App extends Component {
+    render () {
+        return (
+            <div>
+                <ImageList />
+            </div>
+        );
+    }
+};
+
+// Render this component to the screen
+Meteor.startup(() => {
+    ReactDOM.render(<App />, document.querySelector('.container'));
+    axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
+        .then(response => console.log(response));
+});
+```
