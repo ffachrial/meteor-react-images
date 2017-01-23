@@ -195,3 +195,45 @@ Meteor.startup(() => {
         .then(response => console.log(response));
 });
 ```
+
+### Load Data with Lifecycle Methods
+Change **main.jsx** :
+```js
+...
+...
+class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { images: [] };
+    }
+
+    componentWillMount() {
+        // Fantastic place to load data!
+        axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
+            .then(response => this.setState( { images: response.data.data } ));
+    }
+
+    render () {
+        return (
+            <div>
+                <ImageList images={this.state.images} />
+            </div>
+        );
+    }
+...
+Meteor.startup(() => {
+    ReactDOM.render(<App />, document.querySelector('.container'));
+});
+```
+Change **image_list.jsx** :
+```js
+import React from 'react';
+import ImageDetail from './image_detail';
+
+// Create component
+const ImageList = (props) => {
+    const RenderedImages = props.images.map(image => 
+        <ImageDetail key={image.title} image={image} />
+    );
+```
