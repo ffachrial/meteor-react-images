@@ -130,3 +130,36 @@ Change **image_detail.jsx** :
         </li>
     );
 ```
+
+### Adding CSS to the Components
+Add Twitter's Bootstrap.
+```bash
+meteor add twbs:bootstrap@3.3.6
+```
+Change **image_detail.jsx** :
+```js
+        <li className="media list-group-item">
+            <div className="media-left">
+                <img src={props.image.link} />
+            </div>
+            <div className="media-body">
+                <h4 className="media-heading">
+                    {props.image.title}
+                </h4>
+            </div>
+        </li>
+```
+Change **image_list.jsx** :
+```js
+    return (
+        <ul className="media-list list-group">
+            {RenderedImages}
+        </ul>
+    );
+```
+Create _style_ folder inside _client_ folder and create **main.css** file :
+```css
+img {
+    width: 300px;
+}
+```
